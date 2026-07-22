@@ -1,0 +1,42 @@
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.member-grid {
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 32px;
+}
+
+.section-02 {
+  padding: 32px 128px 32px 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section-02-header {
+  gap: 8px;
+}
+
+.section-02-title {
+  grid-row: span 1;
+  grid-column: span 1;
+  justify-self: stretch;
+  color: #39ff14;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+}
+
+.team-header {
+  grid-row: span 1;
+  grid-column: span 1;
+  justify-self: stretch;
+  color: #e8e8e3;
+  font-family: "Space Mono", monospace;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}

@@ -1,0 +1,47 @@
+.section-04 {
+  padding: 32px 128px 32px 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #0d0d0d;
+}
+
+.section-04-header {
+  gap: 8px;
+  background: transparent;
+}
+
+.section-04-title {
+  color: #39ff14;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  background: transparent;
+}
+
+.achievements-header {
+  color: #e8e8e3;
+  font-family: "Space Mono", monospace;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+.achievements-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .achievements-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .achievements-section {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,171 @@
+.section-06 {
+  padding: 32px 128px 32px 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #0d0d0d;
+}
+
+.section-06-header {
+  gap: 8px;
+  background: transparent;
+}
+
+.section-06-title {
+  color: #39ff14;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  background: transparent;
+}
+
+.contact-header {
+  color: #e8e8e3;
+  font-family: "Space Mono", monospace;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+/* --- Body layout --- */
+
+.contact-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+/* --- Left: Info --- */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-block {
+  padding: 20px 0;
+  border-bottom: 1px solid #242424;
+}
+
+.info-block:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #39ff14;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.info-value {
+  color: #e8e8e3;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* --- Right: Form --- */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #8d8d8d;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #131313;
+  border: 1px solid #242424;
+  border-radius: 4px;
+
+  padding: 14px 16px;
+
+  color: #e8e8e3;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+
+  outline: none;
+  resize: vertical;
+
+  transition: border-color 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #5a5a5a;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #39ff14;
+}
+
+.form-status {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.form-status.success {
+  color: #39ff14;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  margin-top: 8px;
+
+  padding: 16px 40px;
+
+  background: #39ff14;
+  color: #0d0d0d;
+
+  border: none;
+  border-radius: 4px;
+
+  font-family: "Space Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(57, 255, 20, 0.25);
+}
+
+/* --- Responsive: stack on tablet/mobile --- */
+
+@media (max-width: 900px) {
+  .section-05 {
+    padding: 32px 24px;
+  }
+
+  .contact-body {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

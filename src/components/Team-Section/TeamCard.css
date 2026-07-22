@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+.member-card {
+  --black: #000000;
+  --neon: #39ff14;
+  --white: #e8e8e3;
+
+  font-family: "Space Mono", monospace;
+  background: var(--black);
+  border: 1px solid rgba(232, 232, 227, 0.12);
+  border-radius: 18px;
+  width: 280px;
+  padding: 40px 28px 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.member-card:hover,
+.member-card:focus-within {
+  cursor: pointer;
+  transform: translateY(-10px);
+  border-color: var(--neon);
+}
+
+.member-photo {
+  background: transparent;
+}
+
+.member-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(232, 232, 227, 0.05);
+  border: 1px solid rgba(232, 232, 227, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.member-card:hover .member-photo img,
+.member-card:focus-within .member-photo img {
+  transform: scale(1.1);
+}
+
+.member-name {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: 0.01em;
+  background: transparent;
+}
+
+.member-role {
+  color: var(--neon);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.35);
+  background: transparent;
+}
+
+.member-desc {
+  color: rgba(232, 232, 227, 0.65);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 28px;
+  max-width: 220px;
+  background: transparent;
+}
+
+.member-links {
+  display: flex;
+  gap: 12px;
+  background: transparent;
+}
+
+.icon-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 232, 227, 0.2);
+  color: rgba(232, 232, 227, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-decoration: none;
+  background: transparent;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.icon-link:hover,
+.icon-link:focus-visible {
+  border-color: var(--neon);
+  color: var(--neon);
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.35);
+  outline: none;
+}
