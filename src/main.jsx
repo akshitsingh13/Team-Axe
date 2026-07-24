@@ -1,6 +1,6 @@
 import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import Lenis from "lenis";
 import { gsap } from "gsap";
@@ -50,10 +50,10 @@ function SmoothScroll({ children }) {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <SmoothScroll>
         <App />
       </SmoothScroll>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>,
 );
