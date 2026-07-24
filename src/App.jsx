@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 import "./App.css";
+
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import HighlightsPanel from "./components/HighlightsPanel/HighlightsPanel";
+import Journey from "./components/Journey/Journey";
 import About from "./components/About/About";
 import TeamMembers from "./components/Team-Section/TeamMembers";
 import Projects from "./components/Projects/Projects";
@@ -10,6 +15,28 @@ import Achievements from "./components/Achievements/Achievements";
 import JoinTeam from "./components/JoinTeam/JoinTeam";
 import ContactUs from "./components/Contact-Us/ContactUs";
 import Footer from "./components/Footer/Footer";
+
+function HomePage() {
+  return (
+    <>
+      <HighlightsPanel />
+      <About />
+      <Projects />
+      <Achievements />
+      <TeamMembers />
+      <JoinTeam />
+      <ContactUs />
+    </>
+  );
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   useEffect(() => {
@@ -20,10 +47,14 @@ function App() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("reveal-in");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-in");
+          }
         });
       },
-      { threshold: 0.12 },
+      {
+        threshold: 0.12,
+      },
     );
 
     targets.forEach((el, i) => {
@@ -37,15 +68,15 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Header />
       <NavBar />
-      <HighlightsPanel />
-      <About />
-      <TeamMembers />
-      <Projects />
-      <Achievements />
-      <JoinTeam />
-      <ContactUs />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/journey" element={<Journey />} />
+      </Routes>
+
       <Footer />
     </>
   );

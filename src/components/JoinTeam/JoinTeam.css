@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
 
-  background-color: black;
+  background-color: #0d0d0d;
 }
 
 .section-05::before {
@@ -26,6 +26,18 @@
 
   pointer-events: none;
   z-index: 0;
+}
+
+.section-05::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 128px;
+  right: 128px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .join-team-content {

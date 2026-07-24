@@ -11,27 +11,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Timeline = () => {
   const [activeImage, setActiveImage] = useState(null);
+
   const timelineRef = useRef(null);
   const progressLineRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate the neon green line drawing downwards
-      gsap.fromTo(
-        progressLineRef.current,
-        { scaleY: 0, transformOrigin: "top center" },
-        {
-          scaleY: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: timelineRef.current,
-            start: "top center",
-            end: "bottom center",
-            scrub: true,
-          },
+      gsap.set(progressLineRef.current, {
+        scaleY: 0,
+        transformOrigin: "top center",
+      });
+
+      gsap.to(progressLineRef.current, {
+        scaleY: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: timelineRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+          invalidateOnRefresh: true,
+          fastScrollEnd: true,
+          anticipatePin: 1,
         },
-      );
+      });
+
+      ScrollTrigger.refresh();
     }, timelineRef);
+
+    // Force scroll to top AFTER ScrollTrigger has refreshed/settled
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
 
     return () => ctx.revert();
   }, []);
@@ -39,11 +50,11 @@ const Timeline = () => {
   return (
     <div className="timeline" ref={timelineRef}>
       <div className="timeline-events">
-        {/* Neon progress line */}
         <div className="timeline-progress-line" ref={progressLineRef}></div>
 
         {timelineData.map((event, index) => {
           const side = event.side || (index % 2 === 0 ? "right" : "left");
+
           return (
             <TimelineEvent
               key={event.id}

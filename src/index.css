@@ -19,10 +19,38 @@ body,
 body {
   margin: 0;
 }
+
 #about,
 #team,
 #projects,
 #achievements,
 #join {
   scroll-margin-top: 90px;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

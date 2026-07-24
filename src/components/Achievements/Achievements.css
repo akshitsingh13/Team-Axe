@@ -1,9 +1,20 @@
 .section-04 {
-  padding: 32px 128px 32px 128px;
+  position: relative;
+  padding: 32px 128px;
   display: flex;
   flex-direction: column;
   gap: 32px;
   background-color: #0d0d0d;
+}
+
+.section-04::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 128px;
+  right: 128px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .section-04-header {

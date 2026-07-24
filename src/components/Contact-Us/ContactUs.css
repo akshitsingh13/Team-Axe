@@ -4,6 +4,17 @@
   flex-direction: column;
   gap: 32px;
   background-color: #0d0d0d;
+  position: relative;
+}
+
+.section-06::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 128px;
+  right: 128px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .section-06-header {

@@ -1,39 +1,190 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap");
+
+.section-01 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
+  padding: 64px 128px 80px 128px;
+  background: #0d0d0d;
+}
+
+.section-01::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 128px;
+  right: 128px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+}
 
 .section-01-title {
+  display: grid;
   gap: 8px;
   background: transparent;
 }
 
-.section-01 {
-  width: 100%;
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 24px;
-  padding: 32px 128px 32px 128px;
-  background: #000000;
-}
-
 .section-01-header {
-  grid-row: span 1;
-  grid-column: span 1;
-  justify-self: stretch;
   color: #39ff14;
   font-family: "Space Mono", monospace;
   font-size: 0.7rem;
+  letter-spacing: 0.15em;
   background: transparent;
 }
 
 .about-header {
-  grid-row: span 1;
-  grid-column: span 1;
-  justify-self: stretch;
   color: #e8e8e3;
   font-family: "Space Mono", monospace;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   background: transparent;
+}
+
+/* ---- body: lead copy + cards ---- */
+
+.about-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  background: transparent;
+}
+
+.about-lead-col {
+  display: grid;
+  gap: 28px;
+  align-content: start;
+  background: transparent;
+}
+
+.about-lead {
+  margin: 0;
+  color: #e8e8e3;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  background: transparent;
+}
+
+.about-cta {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: #39ff14;
+  color: #000000;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.about-cta:hover {
+  background-color: #6dff4d;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(57, 255, 20, 0.35);
+}
+
+.about-cta:hover {
+  transform: translateX(5px);
+}
+
+.about-cta:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(57, 255, 20, 0.3);
+}
+
+.about-cta:focus-visible {
+  outline: 2px solid #e8e8e3;
+  outline-offset: 3px;
+}
+
+.about-cards {
+  display: grid;
+  gap: 1px;
+  background: #1a1a1a;
+  border: 1px solid #1a1a1a;
+}
+
+.about-card {
+  position: relative;
+  background: #0a0a0a;
+  padding: 24px 28px;
+  border-left: 3px solid #39ff14;
+}
+
+.about-card-label {
+  color: #39ff14;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.about-card-text {
+  margin: 0;
+  color: #a3a39d;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ---- motto: the signature element ---- */
+
+.about-motto {
+  justify-self: center;
+  max-width: 640px;
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.about-motto p {
+  margin: 0;
+  color: #39ff14;
+  font-family: "Space Mono", monospace;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 900px) {
+  .section-01 {
+    padding: 48px 24px 56px 24px;
+  }
+
+  .about-body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-header {
+    font-size: 36px;
+  }
+
+  .about-lead {
+    font-size: 22px;
+    background: transparent;
+  }
 }

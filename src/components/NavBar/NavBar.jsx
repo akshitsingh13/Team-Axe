@@ -4,9 +4,9 @@ const NavBar = () => {
   const navItems = [
     { label: "Home", href: "#home" }, //HighlightsPanel.jsx
     { label: "About", href: "#about" }, //About.jsx
-    { label: "Team", href: "#team" }, //TeamMembers.jsx
     { label: "Projects", href: "#projects" }, //Projects.jsx
     { label: "Achievements", href: "#achievements" }, //Achievements.jsx
+    { label: "Team", href: "#team" }, //TeamMembers.jsx
     { label: "Join Us", href: "#join", highlight: true }, //JoinTeam.jsx
   ];
 
